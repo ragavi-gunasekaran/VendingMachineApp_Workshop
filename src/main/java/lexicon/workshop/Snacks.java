@@ -9,24 +9,13 @@ public class Snacks extends Product {
     private boolean isToppingsNeeded;
 
     public Snacks(int id, boolean isToppingsNeeded, int quantity, int price, String name) {
-        this.id = id;
+        super(id,quantity,price,name);
         this.isToppingsNeeded = isToppingsNeeded;
-        this.quantity = quantity;
-        this.price = price;
-        this.name = name;
     }
 
     @Override
     public String getDescription() {
         return "";
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public boolean isToppingsNeeded() {
@@ -37,27 +26,4 @@ public class Snacks extends Product {
         isToppingsNeeded = toppingsNeeded;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 }

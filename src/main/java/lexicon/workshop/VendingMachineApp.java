@@ -7,6 +7,10 @@ public class VendingMachineApp {
     static Scanner scan = new Scanner(System.in);
     static IVendingMachine vendingMachine ;
 
+    public VendingMachineApp(IVendingMachine vendingMachine) {
+        this.vendingMachine = vendingMachine;
+    }
+
     static void main() {
 
         System.out.println("====================== Welcome to the Vending Machine App ======================");
@@ -17,11 +21,12 @@ public class VendingMachineApp {
             switch (input) {
                 case 1:
                     System.out.println("View the available products in Stock");
-                    vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
+                    //vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
+                    System.out.println(vendingMachine.getProducts());
                     break;
                 case 2:
                     System.out.println("Select & Purchase a product");
-                    vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
+                    //vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
                     //searchContact();
                     break;
                 case 3:
