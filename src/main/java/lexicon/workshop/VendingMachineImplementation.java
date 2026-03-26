@@ -1,13 +1,24 @@
 package lexicon.workshop;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class VendingMachineImplementation implements IVendingMachine {
 
+    final List<Integer> coins = Arrays.asList(1,2,5,10,20,50);
+    int balance = 0;
+
     @Override
     public void insertCoin(int coin) {
-
+            if (coins.contains(coin)) {
+                balance += coin;
+                System.out.println("Coin Inserted : " + coin);
+                System.out.println("Available balance now : " + balance);
+            } else {
+                System.out.println("Invalid coin: " + coin);
+            }
     }
 
     @Override

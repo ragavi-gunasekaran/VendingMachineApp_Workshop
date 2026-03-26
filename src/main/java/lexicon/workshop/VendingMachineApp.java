@@ -21,7 +21,9 @@ public class VendingMachineApp {
                     vendingMachine.getProducts();
                     break;
                 case 2:
-                    System.out.println("Please insert a coin");
+                    System.out.println("Please insert a coin - 1,2,5,10,20,50");
+                    int insertedCoin = scan.nextInt();
+                    vendingMachine.insertCoin(insertedCoin);
                     break;
                 case 3:
                     System.out.println("Select the product displayed and make a purchase");
