@@ -2,7 +2,7 @@ package lexicon.workshop;
 
 import java.util.List;
 
-public class VendingMachineImplementation implements IVendingMachine {
+public class VendingMachineImplementation extends Product implements IVendingMachine {
 
     @Override
     public void insertCoin(int coin) {
@@ -27,5 +27,10 @@ public class VendingMachineImplementation implements IVendingMachine {
     @Override
     public List<Product> getProducts() {
         return List.of();
+    }
+
+    @Override
+    public String getDescription() {
+        return "Product Description : " + getName() + getId() + getPrice() + getQuantity();
     }
 }

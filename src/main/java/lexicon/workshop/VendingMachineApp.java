@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class VendingMachineApp {
 
     static Scanner scan = new Scanner(System.in);
+    static IVendingMachine vendingMachine ;
 
     static void main() {
 
@@ -16,10 +17,11 @@ public class VendingMachineApp {
             switch (input) {
                 case 1:
                     System.out.println("View the available products in Stock");
-                    //addContact();
+                    vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
                     break;
                 case 2:
                     System.out.println("Select & Purchase a product");
+                    vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
                     //searchContact();
                     break;
                 case 3:
