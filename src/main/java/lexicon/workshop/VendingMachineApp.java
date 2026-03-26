@@ -20,21 +20,27 @@ public class VendingMachineApp {
         while (value) {
             switch (input) {
                 case 1:
-                    System.out.println("View the available products in Stock");
+                    System.out.println("Available products in Stock");
                     //vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
                     System.out.println(vendingMachine.getProducts());
                     break;
                 case 2:
-                    System.out.println("Select & Purchase a product");
+                    System.out.println("Please insert a coin");
                     //vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
                     //searchContact();
                     break;
                 case 3:
-                    System.out.println("Bill History");
+                    System.out.println("Select the product displayed and make a purchase");
                     //listContact();
                     break;
+                case 4:
+                    System.out.println("Checking for any return change .....");
+                    break;
+                case 5:
+                    System.out.println("Your Bill history is Here : ");
+                    break;
                 case 0:
-                    System.out.println("Exiting the Vending Machine Application");
+                    System.out.println(" Exiting the Vending Machine app !!! Thank you, Have a nice day !!!");
                     break;
                 default:
                     System.out.println("Wrong option chosen. Please enter 1,2,3,0");
@@ -63,8 +69,10 @@ public class VendingMachineApp {
     static void displayConsoleMenu(){
         System.out.println("Please choose an Option below :");
         System.out.println("1. View the Product available in Stock ");
-        System.out.println("2. Select & Purchase a Product ");
-        System.out.println("3. Bill History ");
-        System.out.println("4. Exit ");
+        System.out.println("2. Insert a Coin ");
+        System.out.println("3. Select & Purchase a Product ");
+        System.out.println("4. Return Change (if any) ");
+        System.out.println("5. Bill History ");
+        System.out.println("0. Exit ");
     }
 }
