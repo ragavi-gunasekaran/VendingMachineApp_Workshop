@@ -11,7 +11,7 @@ public class Beverages extends Product {
 
     @Override
     public String getDescription() {
-        return "";
+        return getName() + " (" + flavour + ") - " + getPrice() + " SEK";
     }
 
     public String getFlavour() {

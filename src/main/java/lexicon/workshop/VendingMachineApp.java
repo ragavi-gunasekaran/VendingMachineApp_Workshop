@@ -5,13 +5,10 @@ import java.util.Scanner;
 public class VendingMachineApp {
 
     static Scanner scan = new Scanner(System.in);
-    static IVendingMachine vendingMachine ;
-
-    public VendingMachineApp(IVendingMachine vendingMachine) {
-        this.vendingMachine = vendingMachine;
-    }
 
     static void main() {
+
+        IVendingMachine vendingMachine = new VendingMachineImplementation();
 
         System.out.println("====================== Welcome to the Vending Machine App ======================");
         displayConsoleMenu();
@@ -21,17 +18,13 @@ public class VendingMachineApp {
             switch (input) {
                 case 1:
                     System.out.println("Available products in Stock");
-                    //vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
-                    System.out.println(vendingMachine.getProducts());
+                    vendingMachine.getProducts();
                     break;
                 case 2:
                     System.out.println("Please insert a coin");
-                    //vendingMachine = (IVendingMachine) new VendingMachineImplementation().getProducts();
-                    //searchContact();
                     break;
                 case 3:
                     System.out.println("Select the product displayed and make a purchase");
-                    //listContact();
                     break;
                 case 4:
                     System.out.println("Checking for any return change .....");
@@ -43,11 +36,11 @@ public class VendingMachineApp {
                     System.out.println(" Exiting the Vending Machine app !!! Thank you, Have a nice day !!!");
                     break;
                 default:
-                    System.out.println("Wrong option chosen. Please enter 1,2,3,0");
+                    System.out.println("Wrong option chosen. Please enter 1,2,3,4,5,0");
             }
 
             //To check if the user has to still proceed with or not
-            IO.println("Do you want to still continue with Vending Machine Menu ?(Yes/No)");
+            IO.println("Do you want to order anything more ?(Yes/No)");
             boolean isRight = true;
             while (isRight) {
                 String option = scan.next();

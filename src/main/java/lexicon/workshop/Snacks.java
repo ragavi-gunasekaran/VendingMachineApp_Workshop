@@ -2,10 +2,6 @@ package lexicon.workshop;
 
 public class Snacks extends Product {
 
-    private int id;
-    private String name;
-    private int price;
-    private int quantity;
     private boolean isToppingsNeeded;
 
     public Snacks(int id, boolean isToppingsNeeded, int quantity, int price, String name) {
@@ -15,7 +11,8 @@ public class Snacks extends Product {
 
     @Override
     public String getDescription() {
-        return "";
+        return getName() + (isToppingsNeeded ? " with toppings" : "") + " - " + getPrice() + " SEK";
+
     }
 
     public boolean isToppingsNeeded() {
