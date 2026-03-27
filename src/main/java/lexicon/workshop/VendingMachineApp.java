@@ -30,6 +30,9 @@ public class VendingMachineApp {
                     break;
                 case 4:
                     System.out.println("Checking for any return change .....");
+                    int change = vendingMachine.returnChange();
+                    System.out.println("Balance amount to be returned : " + change);
+                    System.out.println("Please collect the amount in the Money outlet down.");
                     break;
                 case 5:
                     System.out.println("Your Bill history is Here : ");

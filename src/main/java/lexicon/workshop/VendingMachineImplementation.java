@@ -23,7 +23,7 @@ public class VendingMachineImplementation implements IVendingMachine {
 
     @Override
     public int getBalance() {
-        return 0;
+        return balance;
     }
 
     @Override
@@ -33,7 +33,9 @@ public class VendingMachineImplementation implements IVendingMachine {
 
     @Override
     public int returnChange() {
-        return 0;
+        int balanceChange = balance;
+        balance = 0;
+        return balanceChange;
     }
 
     @Override
