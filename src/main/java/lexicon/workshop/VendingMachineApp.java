@@ -31,13 +31,17 @@ public class VendingMachineApp {
                     System.out.println("Choose the product and enter the ID : ");
                     int productId = scan.nextInt();
                     Product p = vendingMachine.purchaseProduct(productId);
-                    System.out.println("Thanks for Purchasing " + p.getName() + " !!! Please collect it below.");
+                    if (p != null) {
+                        System.out.println("Thanks for Purchasing " + p.getName() + " !!! Please collect it below.");
+                    }
                     break;
                 case 4:
                     System.out.println("Checking for any return change .....");
                     int change = vendingMachine.returnChange();
                     System.out.println("Balance amount to be returned : " + change);
-                    System.out.println("Please collect the amount in the Money outlet down.");
+                    if (change != 0 || !(change < 0)) {
+                        System.out.println("Please collect the amount in the Money outlet down.");
+                    }
                     break;
                 case 5:
                     System.out.println("Please contact us in the below give number for any help !!! ");
@@ -45,26 +49,29 @@ public class VendingMachineApp {
                     System.out.println("Thanks you !!!!!");
                 case 0:
                     System.out.println(" Exiting the Vending Machine app !!! Thank you, Have a nice day !!!");
+                    value = false;
                     break;
                 default:
                     System.out.println("Wrong option chosen. Please enter 1,2,3,4,5,0");
             }
 
             //To check if the user has to still proceed with or not
-            IO.println("Do you want to order anything more ?(Yes/No)");
-            boolean isRight = true;
-            while (isRight) {
-                String option = scan.next();
-                if (option.equalsIgnoreCase("Yes")) {
-                    displayConsoleMenu();
-                    input = scan.nextInt();
-                    isRight = false;
-                } else if (option.equalsIgnoreCase("No")) {
-                    value = false;
-                    IO.println("Exiting the Vending Machine , Thanks & Have a nice day !!!!!!");
-                    isRight = false;
-                } else {
-                    IO.println("Wrong option entered. Please enter Yes or No");
+            if (input != 0) {
+                IO.println("Do you want to order anything more ?(Yes/No)");
+                boolean isRight = true;
+                while (isRight) {
+                    String option = scan.next();
+                    if (option.equalsIgnoreCase("Yes")) {
+                        displayConsoleMenu();
+                        input = scan.nextInt();
+                        isRight = false;
+                    } else if (option.equalsIgnoreCase("No")) {
+                        value = false;
+                        IO.println("Exiting the Vending Machine , Thanks & Have a nice day !!!!!!");
+                        isRight = false;
+                    } else {
+                        IO.println("Wrong option entered. Please enter Yes or No");
+                    }
                 }
             }
         }
