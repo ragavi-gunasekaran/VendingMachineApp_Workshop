@@ -27,6 +27,11 @@ public class VendingMachineApp {
                     break;
                 case 3:
                     System.out.println("Select the product displayed and make a purchase");
+                    vendingMachine.getProducts();
+                    System.out.println("Choose the product and enter the ID : ");
+                    int productId = scan.nextInt();
+                    Product p = vendingMachine.purchaseProduct(productId);
+                    System.out.println("Thanks for Purchasing " + p.getName() + " !!! Please collect it below.");
                     break;
                 case 4:
                     System.out.println("Checking for any return change .....");
@@ -35,8 +40,9 @@ public class VendingMachineApp {
                     System.out.println("Please collect the amount in the Money outlet down.");
                     break;
                 case 5:
-                    System.out.println("Your Bill history is Here : ");
-                    break;
+                    System.out.println("Please contact us in the below give number for any help !!! ");
+                    System.out.println(" Dial == +46-78*******");
+                    System.out.println("Thanks you !!!!!");
                 case 0:
                     System.out.println(" Exiting the Vending Machine app !!! Thank you, Have a nice day !!!");
                     break;
@@ -70,7 +76,7 @@ public class VendingMachineApp {
         System.out.println("2. Insert a Coin ");
         System.out.println("3. Select & Purchase a Product ");
         System.out.println("4. Return Change (if any) ");
-        System.out.println("5. Bill History ");
+        System.out.println("5. Help ");
         System.out.println("0. Exit ");
     }
 }
