@@ -1,6 +1,5 @@
 package lexicon.workshop;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,9 +20,9 @@ public class VendingMachineImplementation implements IVendingMachine {
 
     public List<Product> getProductsList() {
         List<Product> productList = new ArrayList<>();
-        productList.add(new Beverages(1,"Orange", 3, 20, "Fanta"));
-        productList.add(new Fruits(2,false, 3,10,"Apple"));
-        productList.add(new Snacks(3,true, 9,30, "Chips"));
+        productList.add(new Beverages(1, 10, 10, "Fanta","Orange"));
+        productList.add(new Fruits(2,8, 5,"Apple",false));
+        productList.add(new Snacks(3,15, 20,"Chips", true));
         return productList;
     }
 

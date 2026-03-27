@@ -4,14 +4,15 @@ public class Fruits extends Product {
 
     private boolean isCutFruit;
 
-    public Fruits(int id, boolean isJuice, int quantity, int price, String name) {
+    public Fruits(int id, int quantity, int price, String name,boolean isJuice) {
         super(id,quantity,price,name);
         this.isCutFruit = isJuice;
     }
 
     @Override
     public String getDescription() {
-        return getName() + (isCutFruit ? " (Cut)" : " (Whole)") + " - " + getPrice() + " SEK";
+        return "Product ID : " + getId() + " === " +
+                getName() + (isCutFruit ? " (Cut)" : " (Whole)") + " - " + getPrice() + " SEK";
     }
 
     public boolean isCutFruit() {
