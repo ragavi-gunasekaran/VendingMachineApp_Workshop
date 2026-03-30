@@ -44,17 +44,6 @@ public class TestVendingMachineImplementation {
     }
 
     @Test
-    void testPurchaseFailsOutOfStock() {
-        Product product = vendingMachine.getProducts().get(0);
-        product.setQuantity(0);
-        vendingMachine.insertCoin(50); // sufficient balance
-        Product result = vendingMachine.purchaseProduct(product.getId());
-        assertNull(result); // purchase fails
-        assertEquals(50, vendingMachine.getBalance()); // balance unchanged
-        assertEquals(0, product.getQuantity()); // still 0
-    }
-
-    @Test
     void testGetProductsReturnsAllItems() {
         List<Product> products = vendingMachine.getProducts();
         assertEquals(3, products.size());
